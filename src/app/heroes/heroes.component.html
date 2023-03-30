@@ -14,18 +14,4 @@
   </div>
 </div>
 
-<div class="row mt-3" *ngIf="selectedHero">
-  <div class="col-md-12">
-    <h2 class="mb-0">{{ selectedHero.name }} Details</h2>
-  </div>
-  <div class="col-md-12"><span>id: </span> {{ selectedHero.id }}</div>
-  <div class="col-md-12"><span>id: </span> {{ selectedHero.name }}</div>
-  <div class="col-md-12">
-    <input
-      id="name"
-      [(ngModel)]="selectedHero.name"
-      type="text"
-      placeholder="name"
-    />
-  </div>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
