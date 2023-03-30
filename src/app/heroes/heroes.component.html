@@ -1,17 +1,19 @@
-<div class="row">
-  <div class="col">
-    <h2>My Heroes</h2>
+<div class="container">
+  <div class="row">
+    <div class="col mt-3">
+      <h2>My Heroes</h2>
+    </div>
   </div>
-</div>
-<div class="row heroes">
-  <div
-    class="col-md-12"
-    [class.selected]="hero === selectedHero"
-    *ngFor="let hero of heroes"
-    (click)="onSelect(hero)"
-  >
-    <span class="pe-2">{{ hero.id }}</span> <span>{{ hero.name }}</span>
+  <div class="row heroes">
+    <div
+      class="col-md-12"
+      [class.selected]="hero === selectedHero"
+      *ngFor="let hero of heroes"
+      (click)="onSelect(hero)"
+    >
+      <span class="pe-2">{{ hero.id }}</span> <span>{{ hero.name }}</span>
+    </div>
   </div>
-</div>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+</div>
