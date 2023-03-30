@@ -1,22 +1,31 @@
 <div class="row">
   <div class="col">
-    <h2>{{ hero.name | uppercase }} Details</h2>
+    <h2>My Heroes</h2>
   </div>
 </div>
-<div class="row">
-  <div class="col">
-    <div><span>id:</span>{{ hero.id }}</div>
-  </div>
-</div>
-<div class="row">
-  <div class="col">
-    <div><span>name:</span>{{ hero.name }}</div>
+<div class="row heroes">
+  <div
+    class="col-md-12"
+    [class.selected]="hero === selectedHero"
+    *ngFor="let hero of heroes"
+    (click)="onSelect(hero)"
+  >
+    <span class="pe-2">{{ hero.id }}</span> <span>{{ hero.name }}</span>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12"><label for="name"></label></div>
+<div class="row mt-3" *ngIf="selectedHero">
   <div class="col-md-12">
-    <input id="name" [(ngModel)]="hero.name" type="text" placeholder="name" />
+    <h2 class="mb-0">{{ hero.name }} Details</h2>
+  </div>
+  <div class="col-md-12"><span>id: </span> {{ selectedHero.id }}</div>
+  <div class="col-md-12"><span>id: </span> {{ selectedHero.name }}</div>
+  <div class="col-md-12">
+    <input
+      id="name"
+      [(ngModel)]="selectedHero.name"
+      type="text"
+      placeholder="name"
+    />
   </div>
 </div>
