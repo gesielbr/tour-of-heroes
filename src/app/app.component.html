@@ -3,7 +3,19 @@
     <div class="container">
       <h1 class="mb-0">{{ title }}</h1>
     </div>
+
+    <span class="example-spacer"></span>
+
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Lista de heróis"
+      routerLink="/heroes"
+      matTooltip="Heroes List"
+    >
+      <mat-icon>sports_martial_arts</mat-icon>
+    </button>
   </mat-toolbar>
-  <app-heroes></app-heroes>
+  <router-outlet></router-outlet>
   <app-messages></app-messages>
 </div>
