@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero.model';
-import { HeroService } from '../hero.service';
+import { Hero } from '../core/models/hero.model';
+import { HeroService } from '../core/services/hero.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { HEROES } from '../mock-heroes';
+import { HEROES } from '../core/services/mock-heroes';
 
 export interface HeroesTable {
   name: string;

@@ -1,33 +1,5 @@
 <div class="fluid-container">
-  <mat-toolbar color="primary">
-    <div class="container">
-      <div class="row">
-        <div class="col d-flex justify-content-between align-items-center">
-          <div>
-            <h1 class="mb-0">{{ title }}</h1>
-          </div>
-          <div>
-            <button
-              mat-icon-button
-              aria-label="Dashboard"
-              routerLink="/dashboard"
-              matTooltip="Dashboard"
-            >
-              <mat-icon>dashboard</mat-icon>
-            </button>
-            <button
-              mat-icon-button
-              aria-label="Lista de heróis"
-              routerLink="/heroes"
-              matTooltip="Heroes List"
-            >
-              <mat-icon>sports_martial_arts</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </mat-toolbar>
+  <app-toolbar [title]="title"/>
   <div class="content" fxLayoutGap="12px">
     <router-outlet></router-outlet>
     <app-messages></app-messages>
