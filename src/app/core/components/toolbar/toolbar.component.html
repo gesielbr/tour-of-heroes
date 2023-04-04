@@ -7,20 +7,13 @@
         </div>
         <div>
           <button
+            *ngFor="let menuItem of menuItems"
             mat-icon-button
-            aria-label="Dashboard"
-            routerLink="/dashboard"
-            matTooltip="Dashboard"
+            aria-label="menuItem.toolTipText"
+            [matTooltip]="menuItem.toolTipText"
+            [routerLink]="menuItem.routerLink"
           >
-            <mat-icon>dashboard</mat-icon>
-          </button>
-          <button
-            mat-icon-button
-            aria-label="Lista de heróis"
-            routerLink="/heroes"
-            matTooltip="Heroes List"
-          >
-            <mat-icon>sports_martial_arts</mat-icon>
+            <mat-icon>{{ menuItem.icon }}</mat-icon>
           </button>
         </div>
       </div>
