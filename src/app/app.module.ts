@@ -4,29 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { CoreModule } from './core/core.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { HeroesModule } from './heroes/heroes.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    DashboardComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
+    //angular
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule,
 
+    //feature
+    DashboardModule,
+    HeroesModule,
+
+    //app
     CoreModule,
+    AppRoutingModule,
   ],
   //FormsModule para utilizar ([ngModel])
   providers: [],
