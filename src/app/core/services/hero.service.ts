@@ -4,12 +4,13 @@ import { Hero } from '../models/hero.model';
 import { MessageService } from './message.service';
 import { HEROES } from './mock-heroes';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeroService {
-  private heroesUrl = 'api/heroes';
+  private heroesUrl = `${environment.baseUrl}/heroes`;
 
   /* 
   GET: obter os dados
