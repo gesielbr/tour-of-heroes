@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "backend": "json-server --watch ./src/mocks/db.json"
+    "backend": "json-server --watch ./src/mocks/db.json --routes ./src/mocks/routes.json"
   },
   "private": true,
   "dependencies": {

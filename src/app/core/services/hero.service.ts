@@ -12,6 +12,13 @@ export class HeroService {
   private heroesUrl = 'api/heroes';
 
   /* 
+  GET: obter os dados
+  PUT/PATCH: alterar o dado
+  POST: criar novo dado
+  DELETE: criar novo dado 
+  */
+
+  /* 
   local
   http://localhost:4200/heroes
   http://localhost:3000/api/heroes 
@@ -24,12 +31,17 @@ export class HeroService {
   http://heroes.herokuapp.com/api/heroes
   */
 
-  constructor(private messageService: MessageService, http: HttpClient) {}
+  constructor(
+    private messageService: MessageService,
+    private http: HttpClient
+  ) {}
 
   getHeroes(): Observable<Hero[]> {
-    const heroes = of(HEROES);
-    this.log('fetched heroes');
-    return heroes;
+    return this.http.get<Hero[]>(this.heroesUrl);
+
+    // const heroes = of(HEROES);
+    // this.log('fetched heroes');
+    // return heroes;
   }
 
   getHero(id: number): Observable<Hero> {

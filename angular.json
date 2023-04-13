@@ -64,7 +64,8 @@
               "browserTarget": "tour-of-heroes:build:production"
             },
             "development": {
-              "browserTarget": "tour-of-heroes:build:development"
+              "browserTarget": "tour-of-heroes:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
